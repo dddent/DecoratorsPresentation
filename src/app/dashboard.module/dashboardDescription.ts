@@ -6,11 +6,7 @@ export const dashboardDescription: IDashboardDescription = {
   cols: [
     {
       width: 3,
-      widgets: [
-        {
-          id: 'example'
-        }
-      ]
+      widgets: []
     },
     {
       width: 3,

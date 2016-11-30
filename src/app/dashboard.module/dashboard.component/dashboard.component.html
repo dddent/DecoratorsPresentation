@@ -3,7 +3,8 @@
     <h1>{{name}}</h1>
   </div>
   <div class="col-md-1">
-    <button type="button" class="btn btn-default" (click)="toggleEdit()"><span class="glyphicon glyphicon-edit"></span></button>
+    <button type="button" class="btn" [ngClass]="{'btn-default': !isEditMode, 'btn-danger': isEditMode }"
+      (click)="toggleEdit()"><span class="glyphicon" [ngClass]="{'glyphicon-edit': !isEditMode, 'glyphicon-remove': isEditMode }"></span></button>
   </div>
 </div>
 <hr>
@@ -11,7 +12,8 @@
   <div *ngFor="let col of cols" class="col-md-{{col.width}}">
     <div *ngFor="let widget of col.widgets" class="row">
       <div class="col-md-12">
-        <app-widget-container [widgetId]="widget.id" settings="widget.settings"></app-widget-container>
+        <app-widget-container (onRemove)="removeWidget(col, widget)" [editMode]="isEditMode"
+          [widgetId]="widget.id" settings="widget.settings"></app-widget-container>
       </div>
     </div>
 

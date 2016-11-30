@@ -4,9 +4,9 @@ import { Widget } from '../dashboard.module/Widget.decorator';
 
 @Widget({
   id: 'example',
-  name: 'Example',
+  name: 'Example Widget',
   component: ExampleComponent,
-  widths: [3]
+  widths: [3, 4]
 })
 @NgModule({
   declarations: [ExampleComponent],

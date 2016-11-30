@@ -1,5 +1,7 @@
 <div class="row" *ngIf="!isError">
-  <div class="col-md-12" #widgetContainer>
+  <div *ngIf="editMode" class="close-box" (click)="remove()"><span class="glyphicon glyphicon-remove"></span></div>
+  <div class="col-md-12">
+    <div #widgetContainer></div>
   </div>
 </div>
 <div class="row" *ngIf="isNotFoundError">

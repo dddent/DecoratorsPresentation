@@ -21,6 +21,10 @@ export class DashboardComponent {
     return this._description.name;
   }
 
+  public removeWidget(col: IDashboardColDescription, widget: { id: string }): void {
+    col.widgets.splice(col.widgets.indexOf(widget), 1);
+  }
+
   public get cols(): IDashboardColDescription[] {
     return this._description.cols;
   }
